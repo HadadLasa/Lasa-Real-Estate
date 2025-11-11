@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lasa Real Estate - Premium Properties in Khartoum</title>
+    <title>لاسا للعقارات - عقارات مميزة في الخرطوم</title>
     <style>
         /* Modern Color Scheme */
         :root {
@@ -21,7 +21,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Arial', sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
@@ -73,6 +73,25 @@
             color: var(--blue);
         }
 
+        .language-switcher {
+            margin-right: 2rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--gray);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
@@ -82,8 +101,9 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
         .hero p {
@@ -108,20 +128,14 @@
             transform: translateY(-2px);
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        /* Sections Common Styles */
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--dark-gray);
             margin-bottom: 1rem;
         }
@@ -129,6 +143,16 @@
         .section-title p {
             color: var(--gray);
             font-size: 1.1rem;
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .services-grid {
@@ -156,12 +180,55 @@
             margin-bottom: 1rem;
         }
 
-        /* Projects Section */
-        .projects {
+        /* About Section */
+        .about {
             background: #f8fafc;
-            padding: 80px 5%;
         }
 
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .vision-mission {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .vm-item {
+            margin-bottom: 2rem;
+        }
+
+        .vm-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vm-item h4 {
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -175,6 +242,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
         .project-image {
@@ -191,9 +263,74 @@
             padding: 1.5rem;
         }
 
+        .project-info h3 {
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info .location {
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info .price {
+            color: var(--golden);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Properties Listing */
+        .properties {
+            background: #f8fafc;
+        }
+
+        .filters {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group select, .filter-group input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            background: var(--white);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
         /* Contact Section */
         .contact {
-            padding: 80px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -210,6 +347,11 @@
             padding: 2rem;
             background: #f8fafc;
             border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
         }
 
         .contact-item h3 {
@@ -239,6 +381,10 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .language-switcher {
+                margin-right: 1rem;
+            }
         }
     </style>
 </head>
@@ -246,45 +392,102 @@
     <!-- Header -->
     <header>
         <nav class="navbar">
-            <div class="logo">Lasa<span>RealEstate</span></div>
+            <div class="logo">لاسا<span>للعقارات</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#projects">مشاريعنا</a></li>
+                <li><a href="#properties">العقارات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active">العربية</button>
+                <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Premium Real Estate in Khartoum</h1>
-        <p>Established experts in property selling, buying, and development with over 7 successful projects in Khartoum</p>
-        <button class="cta-button">View Our Projects</button>
+        <h1>شركة لاسا للعقارات - الريادة في سوق العقارات السوداني</h1>
+        <p>شركة رائدة في بيع وشراء وتطوير العقارات، أنجزنا أكثر من 7 مشاريع ناجحة في الخرطوم</p>
+        <button class="cta-button">استعرض مشاريعنا</button>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>٧+</h3>
+                <p>مشاريع مكتملة</p>
+            </div>
+            <div class="stat-item">
+                <h3>٥٠+</h3>
+                <p>عقار مباع</p>
+            </div>
+            <div class="stat-item">
+                <h3>١٠٠+</h3>
+                <p>عميل راضٍ</p>
+            </div>
+            <div class="stat-item">
+                <h3>٥</h3>
+                <p>سنوات من الخبرة</p>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Comprehensive real estate solutions tailored to your needs</p>
+            <h2>خدماتنا</h2>
+            <p>حلول عقارية شاملة مصممة خصيصًا لاحتياجاتك</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🏠</div>
-                <h3>Property Buying</h3>
-                <p>Find your dream property with our expert guidance and market knowledge</p>
+                <h3>شراء العقارات</h3>
+                <p>ابحث عن عقارك المثالي بتوجيه خبرائنا ومعرفتنا بالسوق</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">💰</div>
-                <h3>Property Selling</h3>
-                <p>Maximize your property value with our strategic marketing approach</p>
+                <h3>بيع العقارات</h3>
+                <p>ضاعف قيمة عقارك من خلال استراتيجيتنا التسويقية المبتكرة</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🏗️</div>
-                <h3>Property Development</h3>
-                <p>From concept to completion, we develop exceptional properties</p>
+                <h3>تطوير العقارات</h3>
+                <p>من الفكرة إلى التنفيذ، نطور عقارات استثنائية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>من نحن</h2>
+            <p>شركة لاسا للعقارات - شركة راسخة في سوق العقارات السوداني</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>قصتنا</h3>
+                <p>تأسست شركة لاسا للعقارات كمؤسسة رائدة في مجال العقارات في السودان، متخصصة في بيع وشراء وتطوير العقارات. على مر السنين، قمنا بتطوير أكثر من 7 مشاريع ناجحة في الخرطوم، مما عزز مكانتنا كشركة موثوقة في السوق.</p>
+                
+                <div class="vision-mission">
+                    <div class="vm-item">
+                        <h4>📜 رؤيتنا</h4>
+                        <p>أن نكون الشركة الرائدة في مجال العقارات في السودان، معترفًا بنا لتميزنا في تقديم حلول عقارية مبتكرة وموثوقة تلبي تطلعات عملائنا وتساهم في تطوير القطاع العقاري.</p>
+                    </div>
+                    <div class="vm-item">
+                        <h4>🎯 رسالتنا</h4>
+                        <p>توفير خدمات عقارية شاملة ومتميزة من خلال فريق محترف، مع الالتزام بأعلى معايير الجودة والنزاهة، والمساهمة في بناء مجتمع عقاري مستدام في السودان.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div style="background: var(--gray); height: 400px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                    صورة الشركة
+                </div>
             </div>
         </div>
     </section>
@@ -292,29 +495,102 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="section-title">
-            <h2>Our Projects</h2>
-            <p>Discover our successful developments across Khartoum</p>
+            <h2>مشاريعنا</h2>
+            <p>اكتشف مشاريعنا الناجحة في مختلف أنحاء الخرطوم</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-image">Project Image 1</div>
+                <div class="project-image">صورة المشروع ١</div>
                 <div class="project-info">
-                    <h3>Project Name 1</h3>
-                    <p>Khartoum • Residential</p>
+                    <h3>مشروع الروابي</h3>
+                    <p class="location">الخرطوم • سكني</p>
+                    <p class="price">١,٢٠٠,٠٠٠ جنيه</p>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-image">Project Image 2</div>
+                <div class="project-image">صورة المشروع ٢</div>
                 <div class="project-info">
-                    <h3>Project Name 2</h3>
-                    <p>Khartoum • Commercial</p>
+                    <h3>برج الخرطوم</h3>
+                    <p class="location">الخرطوم • تجاري</p>
+                    <p class="price">٢,٥٠٠,٠٠٠ جنيه</p>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-image">Project Image 3</div>
+                <div class="project-image">صورة المشروع ٣</div>
                 <div class="project-info">
-                    <h3>Project Name 3</h3>
-                    <p>Khartoum • Mixed Use</p>
+                    <h3>مدينة الأمل</h3>
+                    <p class="location">الخرطوم • مختلط</p>
+                    <p class="price">١,٨٠٠,٠٠٠ جنيه</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Listing Section -->
+    <section class="properties" id="properties">
+        <div class="section-title">
+            <h2>قائمة العقارات</h2>
+            <p>استعرض مجموعة عقاراتنا المتاحة</p>
+        </div>
+        
+        <div class="filters">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <select>
+                        <option value="">نوع العقار</option>
+                        <option value="apartment">شقة</option>
+                        <option value="villa">فيلا</option>
+                        <option value="commercial">تجاري</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select>
+                        <option value="">المدينة</option>
+                        <option value="khartoum">الخرطوم</option>
+                        <option value="omdurman">أم درمان</option>
+                        <option value="bahri">بحري</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select>
+                        <option value="">السعر</option>
+                        <option value="0-500000">حتى ٥٠٠,٠٠٠ جنيه</option>
+                        <option value="500000-1000000">٥٠٠,٠٠٠ - ١,٠٠٠,٠٠٠ جنيه</option>
+                        <option value="1000000+">أكثر من ١,٠٠٠,٠٠٠ جنيه</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="text" placeholder="ابحث بالمنطقة...">
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">شقة فاخرة</div>
+                <div class="project-info">
+                    <h3>شقة ٣ غرف في الروابي</h3>
+                    <p class="location">الخرطوم - الروابي</p>
+                    <p>٣ غرف نوم • ٢ حمام • ١٥٠ م²</p>
+                    <p class="price">٨٥٠,٠٠٠ جنيه</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">فيلا راقية</div>
+                <div class="project-info">
+                    <h3>فيلا ٤ غرف في الرياض</h3>
+                    <p class="location">الخرطوم - الرياض</p>
+                    <p>٤ غرف نوم • ٣ حمام • ٢٥٠ م²</p>
+                    <p class="price">١,٢٠٠,٠٠٠ جنيه</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">محل تجاري</div>
+                <div class="project-info">
+                    <h3>محل تجاري في البحر</h3>
+                    <p class="location">الخرطوم - بحري</p>
+                    <p>محل تجاري • ٨٠ م² • واجهة رئيسية</p>
+                    <p class="price">٦٠٠,٠٠٠ جنيه</p>
                 </div>
             </div>
         </div>
@@ -323,20 +599,20 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Get in touch with our expert team</p>
+            <h2>اتصل بنا</h2>
+            <p>تواصل مع فريقنا الخبير</p>
         </div>
         <div class="contact-info">
             <div class="contact-item">
-                <h3>📍 Address</h3>
-                <p>الروابي سيتي رقم 641<br>Khartoum, Sudan</p>
+                <h3>📍 العنوان</h3>
+                <p>الخرطوم - السودان<br>الروابي سيتي رقم ٦٤١</p>
             </div>
             <div class="contact-item">
-                <h3>📞 Phone</h3>
-                <p>+249 111 082 975</p>
+                <h3>📞 الهاتف</h3>
+                <p>٤٩١١١٠٨٢٩٧٥+</p>
             </div>
             <div class="contact-item">
-                <h3>✉️ Email</h3>
+                <h3>✉️ البريد الإلكتروني</h3>
                 <p>lasasd@gmail.com</p>
             </div>
         </div>
@@ -344,7 +620,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Lasa Real Estate. All rights reserved.</p>
+        <p>© ٢٠٢٤ شركة لاسا للعقارات. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script>
@@ -378,6 +654,35 @@
                 }
             });
         });
+
+        // Language switching function
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                // This would be replaced with actual translation in a real implementation
+                alert('English version would be implemented here');
+                // For now, just switch button states
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            } else {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector('.lang-btn').classList.add('active');
+            }
+        }
+
+        // Filter functionality (basic)
+        document.querySelectorAll('.filter-group select, .filter-group input').forEach(element => {
+            element.addEventListener('change', filterProperties);
+            element.addEventListener('input', filterProperties);
+        });
+
+        function filterProperties() {
+            // This would filter the properties in a real implementation
+            console.log('Filtering properties...');
+        }
     </script>
 </body>
 </html>

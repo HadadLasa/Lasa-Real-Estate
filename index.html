@@ -1,1 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لاسا العقارية | Lasa Real Estate - شركة عقارية رائدة في السودان</title>
+    <meta name="description" content="شركة لاسا العقارية - رائدة في التطوير والاستثمار العقاري في السودان منذ 2006. خدمات شاملة في البيع والشراء والتقييم العقاري.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .rtl {
+            direction: rtl;
+        }
+        
+        .ltr {
+            direction: ltr;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .space-x-reverse > * + * {
+            margin-right: 0.5rem;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="app"></div>
 
+    <script>
+        const content = {
+            ar: {
+                name: 'لاسا العقارية',
+                nav: {
+                    home: 'الرئيسية',
+                    about: 'من نحن',
+                    services: 'خدماتنا',
+                    projects: 'مشاريعنا',
+                    contact: 'اتصل بنا'
+                },
+                hero: {
+                    title: 'نبني المستقبل معاً',
+                    subtitle: 'شركة لاسا العقارية - رائدة في التطوير والاستثمار العقاري في السودان منذ عام 2006',
+                    cta: 'اكتشف مشاريعنا',
+                    established: 'تأسست عام 2006'
+                },
+                services: {
+                    title: 'خدماتنا المتكاملة',
+                    items: [
+                        {
+                            title: 'التطوير العقاري',
+                            desc: 'نقوم بتطوير مشاريع عقارية متكاملة تلبي احتياجات السوق السوداني بأعلى معايير الجودة',
+                            icon: '🏢',
+                            color: 'blue'
+                        },
+                        {
+                            title: 'شراء العقارات',
+                            desc: 'نساعدك في العثور على العقار المثالي الذي يناسب احتياجاتك وميزانيتك',
+                            icon: '🔑',
+                            color: 'green'
+                        },
+                        {
+                            title: 'بيع العقارات',
+                            desc: 'نسوق عقارك بأفضل الطرق لضمان أفضل سعر وأسرع صفقة',
+                            icon: '🏠',
+                            color: 'purple'
+                        },
+                        {
+                            title: 'التقييم والتثمين العقاري',
+                            desc: 'خدمات متخصصة في التقييم والتثمين العقاري مع إصدار شهادات معتمدة',
+                            icon: '📊',
+                            color: 'orange'
+                        },
+                        {
+                            title: 'إصدار الشهادات المعتمدة',
+                            desc: 'نقدم شهادات تقييم عقاري معتمدة للأفراد والمؤسسات',
+                            icon: '📋',
+                            color: 'teal'
+                        }
+                    ]
+                },
+                about: {
+                    title: 'عن لاسا العقارية',
+                    text: 'شركة لاسا العقارية، تأسست عام 2006، هي شركة رائدة في مجال التطوير العقاري في السودان. نفخر بتقديم خدمات متكاملة تشمل التطوير العقاري، البيع، والشراء، بالإضافة إلى خدماتنا المتخصصة في التقييم والتثمين العقاري وإصدار الشهادات المعتمدة. نلتزم بتقديم أعلى معايير الجودة والشفافية والمهنية في جميع معاملاتنا.',
+                    experience: 'سنوات من الخبرة',
+                    projects: 'مشاريع منفذة',
+                    quality: 'جودة عالية'
+                },
+                projects: {
+                    title: 'مشاريعنا المنفذة',
+                    subtitle: 'نفخر بتقديم مشاريع عقارية متميزة في مواقع استراتيجية',
+                    list: [
+                        { name: 'المعمورة مربع 78', location: 'المعمورة، الخرطوم' },
+                        { name: 'المعمورة مربع 81', location: 'المعمورة، الخرطوم' },
+                        { name: 'أركويت مربع 50', location: 'أركويت، الخرطوم' },
+                        { name: 'المعمورة مربع 79', location: 'المعمورة، الخرطوم' },
+                        { name: 'مجمع الروابي سيتي', location: 'الروابي سيتي، الخرطوم', featured: true },
+                        { name: 'شارع الستين مربع 87', location: 'المعمورة، الخرطوم' }
+                    ]
+                },
+                contact: {
+                    title: 'تواصل معنا',
+                    subtitle: 'نحن هنا لخدمتك والإجابة على جميع استفساراتك',
+                    address: 'الخرطوم - الروابي سيتي، رقم 641',
+                    phone: '+249 111 082 975',
+                    email: 'lasasd@google.com',
+                    form: {
+                        name: 'الاسم الكامل',
+                        email: 'البريد الإلكتروني',
+                        phone: 'رقم الهاتف',
+                        message: 'رسالتك',
+                        submit: 'إرسال الرسالة'
+                    },
+                    success: 'شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.'
+                },
+                footer: {
+                    rights: '© 2024 شركة لاسا العقارية. جميع الحقوق محفوظة.',
+                    slogan: 'نبني معاً مستقبل السودان العقاري',
+                    since: 'منذ عام 2006'
+                }
+            },
+            en: {
+                name: 'Lasa Real Estate',
+                nav: {
+                    home: 'Home',
+                    about: 'About',
+                    services: 'Services',
+                    projects: 'Projects',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Building the Future Together',
+                    subtitle: 'Lasa Real Estate - Leading in Real Estate Development and Investment in Sudan Since 2006',
+                    cta: 'Explore Our Projects',
+                    established: 'Established in 2006'
+                },
+                services: {
+                    title: 'Our Comprehensive Services',
+                    items: [
+                        {
+                            title: 'Real Estate Development',
+                            desc: 'We develop integrated real estate projects that meet the needs of the Sudanese market with the highest quality standards',
+                            icon: '🏢',
+                            color: 'blue'
+                        },
+                        {
+                            title: 'Property Buying',
+                            desc: 'We help you find the perfect property that suits your needs and budget',
+                            icon: '🔑',
+                            color: 'green'
+                        },
+                        {
+                            title: 'Property Selling',
+                            desc: 'We market your property in the best ways to ensure the best price and fastest deal',
+                            icon: '🏠',
+                            color: 'purple'
+                        },
+                        {
+                            title: 'Property Valuation & Appraisal',
+                            desc: 'Specialized services in property valuation and appraisal with certified certificates',
+                            icon: '📊',
+                            color: 'orange'
+                        },
+                        {
+                            title: 'Certified Certificates',
+                            desc: 'We provide certified property valuation certificates for individuals and institutions',
+                            icon: '📋',
+                            color: 'teal'
+                        }
+                    ]
+                },
+                about: {
+                    title: 'About Lasa Real Estate',
+                    text: 'Lasa Real Estate, established in 2006, is a leading company in real estate development in Sudan. We pride ourselves on providing comprehensive services including real estate development, selling, and buying, in addition to our specialized services in property valuation, appraisal, and issuing certified certificates. We are committed to delivering the highest standards of quality, transparency, and professionalism in all our transactions.',
+                    experience: 'Years of Experience',
+                    projects: 'Completed Projects',
+                    quality: 'High Quality'
+                },
+                projects: {
+                    title: 'Our Completed Projects',
+                    subtitle: 'We pride ourselves on delivering distinguished real estate projects in strategic locations',
+                    list: [
+                        { name: 'Al-Mamoura Block 78', location: 'Al-Mamoura, Khartoum' },
+                        { name: 'Al-Mamoura Block 81', location: 'Al-Mamoura, Khartoum' },
+                        { name: 'Arkawit Block 50', location: 'Arkawit, Khartoum' },
+                        { name: 'Al-Mamoura Block 79', location: 'Al-Mamoura, Khartoum' },
+                        { name: 'Al-Rawabi City Complex', location: 'Al-Rawabi City, Khartoum', featured: true },
+                        { name: 'Street 60 Block 87', location: 'Al-Mamoura, Khartoum' }
+                    ]
+                },
+                contact: {
+                    title: 'Contact Us',
+                    subtitle: 'We are here to serve you and answer all your inquiries',
+                    address: 'Khartoum - Al-Rawabi City, No. 641',
+                    phone: '+249 111 082 975',
+                    email: 'lasasd@google.com',
+                    form: {
+                        name: 'Full Name',
+                        email: 'Email Address',
+                        phone: 'Phone Number',
+                        message: 'Your Message',
+                        submit: 'Send Message'
+                    },
+                    success: 'Thank you for contacting us! We will respond as soon as possible.'
+                },
+                footer: {
+                    rights: '© 2024 Lasa Real Estate Company. All rights reserved.',
+                    slogan: 'Building Sudan Real Estate Future Together',
+                    since: 'Since 2006'
+                }
+            }
+        };
+
+        let currentLang = 'ar';
+        let menuOpen = false;
+
+        function toggleLang() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            render();
+        }
+
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            render();
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            menuOpen = false;
+            render();
+        }
+
+        function submitForm() {
+            const t = content[currentLang];
+            alert(t.contact.success);
+        }
+
+        function render() {
+            const t = content[currentLang];
+            const isRTL = currentLang === 'ar';
+            
+            const app = document.getElementById('app');
+            app.className = isRTL ? 'rtl' : 'ltr';
+            
+            app.innerHTML = `
+                <header class="bg-white shadow-md sticky top-0 z-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between items-center py-4">
+                            <div class="flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-2 rounded-lg">
+                                    <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold">${t.name}</div>
+                                    <div class="text-sm text-gray-400">${t.footer.since}</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4 text-lg">${t.footer.slogan}</p>
+                            <div class="flex justify-center items-center space-x-6 ${isRTL ? 'space-x-reverse' : ''} mb-6">
+                                <a href="tel:${t.contact.phone.replace(/\s/g, '')}" class="text-gray-400 hover:text-white transition text-2xl">📞</a>
+                                <a href="mailto:${t.contact.email}" class="text-gray-400 hover:text-white transition text-2xl">📧</a>
+                                <a href="#contact" onclick="scrollToSection('contact')" class="text-gray-400 hover:text-white transition text-2xl cursor-pointer">📍</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-700 pt-6 text-center">
+                            <p class="text-gray-400 text-sm">${t.footer.rights}</p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+
+        render();
+    </script>
+</body>
+</html>p-2 rounded-lg">
+                                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="text-2xl font-bold text-gray-900 block">${t.name}</span>
+                                    <span class="text-xs text-blue-600">${t.hero.established}</span>
+                                </div>
+                            </div>
+
+                            <nav class="hidden md:flex space-x-8 ${isRTL ? 'space-x-reverse' : ''}">
+                                <a href="#home" onclick="scrollToSection('home')" class="text-gray-700 hover:text-blue-600 transition font-medium cursor-pointer">${t.nav.home}</a>
+                                <a href="#about" onclick="scrollToSection('about')" class="text-gray-700 hover:text-blue-600 transition font-medium cursor-pointer">${t.nav.about}</a>
+                                <a href="#services" onclick="scrollToSection('services')" class="text-gray-700 hover:text-blue-600 transition font-medium cursor-pointer">${t.nav.services}</a>
+                                <a href="#projects" onclick="scrollToSection('projects')" class="text-gray-700 hover:text-blue-600 transition font-medium cursor-pointer">${t.nav.projects}</a>
+                                <a href="#contact" onclick="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition font-medium cursor-pointer">${t.nav.contact}</a>
+                            </nav>
+
+                            <div class="flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''}">
+                                <button onclick="toggleLang()" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition font-medium">
+                                    ${currentLang === 'ar' ? 'English' : 'عربي'}
+                                </button>
+                                
+                                <button onclick="toggleMenu()" class="md:hidden text-2xl">
+                                    ${menuOpen ? '✕' : '☰'}
+                                </button>
+                            </div>
+                        </div>
+
+                        ${menuOpen ? `
+                        <nav class="md:hidden pb-4 space-y-2">
+                            <a href="#home" onclick="scrollToSection('home')" class="block py-2 text-gray-700 hover:text-blue-600 font-medium cursor-pointer">${t.nav.home}</a>
+                            <a href="#about" onclick="scrollToSection('about')" class="block py-2 text-gray-700 hover:text-blue-600 font-medium cursor-pointer">${t.nav.about}</a>
+                            <a href="#services" onclick="scrollToSection('services')" class="block py-2 text-gray-700 hover:text-blue-600 font-medium cursor-pointer">${t.nav.services}</a>
+                            <a href="#projects" onclick="scrollToSection('projects')" class="block py-2 text-gray-700 hover:text-blue-600 font-medium cursor-pointer">${t.nav.projects}</a>
+                            <a href="#contact" onclick="scrollToSection('contact')" class="block py-2 text-gray-700 hover:text-blue-600 font-medium cursor-pointer">${t.nav.contact}</a>
+                        </nav>
+                        ` : ''}
+                    </div>
+                </header>
+
+                <section id="home" class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white py-32">
+                    <div class="absolute inset-0 bg-black opacity-30"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <div class="inline-flex items-center bg-blue-800/50 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                            <span class="text-blue-100 font-medium">📅 ${t.hero.established}</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                            ${t.hero.title}
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                            ${t.hero.subtitle}
+                        </p>
+                        <button onclick="scrollToSection('projects')" class="bg-white text-blue-900 px-10 py-4 rounded-lg text-lg font-bold hover:bg-blue-50 transition transform hover:scale-105 shadow-2xl cursor-pointer">
+                            ${t.hero.cta} ${isRTL ? '←' : '→'}
+                        </button>
+                    </div>
+                </section>
+
+                <section class="bg-white py-16 -mt-16 relative z-10">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg text-center border border-blue-100">
+                                <div class="text-5xl font-bold text-blue-600 mb-2">18+</div>
+                                <div class="text-gray-700 font-medium">${t.about.experience}</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg text-center border border-green-100">
+                                <div class="text-5xl font-bold text-green-600 mb-2">6+</div>
+                                <div class="text-gray-700 font-medium">${t.about.projects}</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg text-center border border-purple-100">
+                                <div class="text-5xl font-bold text-purple-600 mb-2">100%</div>
+                                <div class="text-gray-700 font-medium">${t.about.quality}</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="about" class="py-20 bg-gray-50">
+                    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">${t.about.title}</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8 rounded-full"></div>
+                        </div>
+                        <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+                            ${t.about.text}
+                        </p>
+                    </div>
+                </section>
+
+                <section id="services" class="py-20 bg-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">${t.services.title}</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            ${t.services.items.map(service => `
+                                <div class="bg-gradient-to-br from-${service.color}-50 to-${service.color}-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                                    <div class="text-5xl mb-6">${service.icon}</div>
+                                    <h3 class="text-2xl font-bold mb-4 text-gray-900">${service.title}</h3>
+                                    <p class="text-gray-700 leading-relaxed">${service.desc}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">${t.projects.title}</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 rounded-full"></div>
+                            <p class="text-lg text-gray-600 max-w-2xl mx-auto">${t.projects.subtitle}</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            ${t.projects.list.map((project, i) => `
+                                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 ${project.featured ? 'ring-2 ring-blue-500' : ''}">
+                                    <div class="h-48 bg-gradient-to-br ${
+                                        project.featured ? 'from-blue-400 via-blue-500 to-blue-600' :
+                                        i % 3 === 0 ? 'from-blue-300 to-blue-500' :
+                                        i % 3 === 1 ? 'from-green-300 to-green-500' :
+                                        'from-purple-300 to-purple-500'
+                                    } relative">
+                                        ${project.featured ? `<div class="absolute top-4 ${isRTL ? 'left-4' : 'right-4'} bg-white px-3 py-1 rounded-full text-sm font-bold text-blue-600 shadow-lg">${currentLang === 'ar' ? 'مميز' : 'Featured'}</div>` : ''}
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold mb-2 text-gray-900">${project.name}</h3>
+                                        <div class="flex items-center text-gray-600">
+                                            <span class="${isRTL ? 'ml-2' : 'mr-2'}">📍</span>
+                                            <span>${project.location}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="py-20 bg-white">
+                    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">${t.contact.title}</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 rounded-full"></div>
+                            <p class="text-lg text-gray-600">${t.contact.subtitle}</p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="space-y-8">
+                                <div class="flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''} bg-blue-50 p-6 rounded-xl">
+                                    <div class="text-3xl">📍</div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-2 text-lg">${currentLang === 'ar' ? 'العنوان' : 'Address'}</h3>
+                                        <p class="text-gray-700">${t.contact.address}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''} bg-green-50 p-6 rounded-xl">
+                                    <div class="text-3xl">📞</div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-2 text-lg">${currentLang === 'ar' ? 'الهاتف' : 'Phone'}</h3>
+                                        <a href="tel:${t.contact.phone.replace(/\s/g, '')}" class="text-gray-700 hover:text-green-600 transition">${t.contact.phone}</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''} bg-purple-50 p-6 rounded-xl">
+                                    <div class="text-3xl">📧</div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-2 text-lg">${currentLang === 'ar' ? 'البريد الإلكتروني' : 'Email'}</h3>
+                                        <a href="mailto:${t.contact.email}" class="text-gray-700 hover:text-purple-600 transition break-all">${t.contact.email}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+                                <input type="text" placeholder="${t.contact.form.name}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+                                <input type="email" placeholder="${t.contact.form.email}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+                                <input type="tel" placeholder="${t.contact.form.phone}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+                                <textarea placeholder="${t.contact.form.message}" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"></textarea>
+                                <button onclick="submitForm()" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-lg text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg cursor-pointer">
+                                    ${t.contact.form.submit}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center space-x-3 ${isRTL ? 'space-x-reverse' : ''} mb-4">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800

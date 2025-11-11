@@ -112,6 +112,16 @@
             opacity: 0.9;
         }
 
+        .established {
+            background: var(--golden);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
         .cta-button {
             background: var(--golden);
             color: var(--white);
@@ -122,10 +132,16 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s;
+            margin: 0 10px;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--white);
         }
 
         /* Sections Common Styles */
@@ -359,6 +375,64 @@
             margin-bottom: 1rem;
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .whatsapp-text {
+            position: fixed;
+            bottom: 90px;
+            left: 25px;
+            background: var(--white);
+            color: var(--dark-gray);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
+        }
+
         /* Footer */
         footer {
             background: var(--dark-gray);
@@ -385,10 +459,29 @@
             .language-switcher {
                 margin-right: 1rem;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 25px;
+            }
+
+            .whatsapp-text {
+                bottom: 75px;
+                left: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/249111082975" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+    <div class="whatsapp-text">تواصل معنا على واتساب</div>
+
     <!-- Header -->
     <header>
         <nav class="navbar">
@@ -410,29 +503,33 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="established">تأسست عام ٢٠٠٦</div>
         <h1>شركة لاسا للعقارات - الريادة في سوق العقارات السوداني</h1>
         <p>شركة رائدة في بيع وشراء وتطوير العقارات، أنجزنا أكثر من 7 مشاريع ناجحة في الخرطوم</p>
-        <button class="cta-button">استعرض مشاريعنا</button>
+        <div>
+            <button class="cta-button">استعرض مشاريعنا</button>
+            <button class="cta-button secondary">اتصل بنا الآن</button>
+        </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item">
+                <h3>١٨+</h3>
+                <p>سنوات من الخبرة</p>
+            </div>
+            <div class="stat-item">
                 <h3>٧+</h3>
                 <p>مشاريع مكتملة</p>
             </div>
             <div class="stat-item">
-                <h3>٥٠+</h3>
+                <h3>١٥٠+</h3>
                 <p>عقار مباع</p>
             </div>
             <div class="stat-item">
                 <h3>١٠٠+</h3>
                 <p>عميل راضٍ</p>
-            </div>
-            <div class="stat-item">
-                <h3>٥</h3>
-                <p>سنوات من الخبرة</p>
             </div>
         </div>
     </section>
@@ -466,12 +563,12 @@
     <section class="about" id="about">
         <div class="section-title">
             <h2>من نحن</h2>
-            <p>شركة لاسا للعقارات - شركة راسخة في سوق العقارات السوداني</p>
+            <p>شركة لاسا للعقارات - شركة راسخة في سوق العقارات السوداني منذ ٢٠٠٦</p>
         </div>
         <div class="about-content">
             <div class="about-text">
                 <h3>قصتنا</h3>
-                <p>تأسست شركة لاسا للعقارات كمؤسسة رائدة في مجال العقارات في السودان، متخصصة في بيع وشراء وتطوير العقارات. على مر السنين، قمنا بتطوير أكثر من 7 مشاريع ناجحة في الخرطوم، مما عزز مكانتنا كشركة موثوقة في السوق.</p>
+                <p>تأسست شركة لاسا للعقارات عام ٢٠٠٦ كمؤسسة رائدة في مجال العقارات في السودان، متخصصة في بيع وشراء وتطوير العقارات. على مر ١٨ عامًا من الخبرة، قمنا بتطوير أكثر من 7 مشاريع ناجحة في الخرطوم وتمكنا من بيع أكثر من ١٥٠ عقار، مما عزز مكانتنا كشركة موثوقة في السوق.</p>
                 
                 <div class="vision-mission">
                     <div class="vm-item">
@@ -615,12 +712,16 @@
                 <h3>✉️ البريد الإلكتروني</h3>
                 <p>lasasd@gmail.com</p>
             </div>
+            <div class="contact-item">
+                <h3>💬 واتساب</h3>
+                <p>٤٩١١١٠٨٢٩٧٥+</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© ٢٠٢٤ شركة لاسا للعقارات. جميع الحقوق محفوظة.</p>
+        <p>© ٢٠٢٤ شركة لاسا للعقارات. جميع الحقوق محفوظة. | تأسست عام ٢٠٠٦</p>
     </footer>
 
     <script>
@@ -683,6 +784,12 @@
             // This would filter the properties in a real implementation
             console.log('Filtering properties...');
         }
+
+        // WhatsApp button click tracking
+        document.querySelector('.whatsapp-float').addEventListener('click', function() {
+            // You can add analytics here
+            console.log('WhatsApp button clicked');
+        });
     </script>
 </body>
 </html>
